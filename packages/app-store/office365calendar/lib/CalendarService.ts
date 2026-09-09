@@ -808,3 +808,25 @@ export async function fetchOutlookEventsWithDelta(accessToken: string, cachedDel
   const url = cachedDeltaToken ? `${base}?$deltatoken=${encodeURIComponent(cachedDeltaToken)}` : base;
   return fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
 }
+
+// Delta Token Cache Helper for Outlook Event Sync
+export async function fetchOutlookEventsWithDelta(accessToken: string, cachedDeltaToken?: string) {
+  const base = "https://graph.microsoft.com/v1.0/me/calendarView/delta";
+  const url = cachedDeltaToken ? `${base}?$deltatoken=${encodeURIComponent(cachedDeltaToken)}` : base;
+  return fetch(url, { headers: { Authorization: `Bearer ${accessToken}`, Prefer: 'odata.maxpagesize=50' } });
+}
+
+// Delta Token Cache Helper for Outlook Event Sync
+export async function fetchOutlookEventsWithDelta(accessToken: string, cachedDeltaToken?: string) {
+  const base = "https://graph.microsoft.com/v1.0/me/calendarView/delta";
+  const url = cachedDeltaToken ? `${base}?$deltatoken=${encodeURIComponent(cachedDeltaToken)}` : base;
+  return fetch(url, { headers: { Authorization: `Bearer ${accessToken}`, Prefer: 'odata.maxpagesize=50' } });
+}
+
+
+// Delta Token Cache Helper for Outlook Event Sync
+export async function fetchOutlookEventsWithDelta(accessToken: string, cachedDeltaToken?: string) {
+  const base = 'https://graph.microsoft.com/v1.0/me/calendarView/delta';
+  const url = cachedDeltaToken ? `${base}?$deltatoken=${encodeURIComponent(cachedDeltaToken)}` : base;
+  return fetch(url, { headers: { Authorization: `Bearer ${accessToken}`, Prefer: 'odata.maxpagesize=50' } });
+}
