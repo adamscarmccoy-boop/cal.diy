@@ -2,11 +2,12 @@
 import dynamic from "next/dynamic";
 
 export const appStoreMap = {
-  typeform: dynamic(() => import("./typeform")),
-  googlecalendar: dynamic(() => import("./googlecalendar")),
-  office365calendar: dynamic(() => import("./office365calendar")),
-  zoom: dynamic(() => import("./zoom")),
-  stripe: dynamic(() => import("./stripe")),
+  stripepayment: dynamic(() => import("./stripepayment/components/EventTypeAppCardInterface")),
+  salesforce: dynamic(() => import("./salesforce/components/EventTypeAppCardInterface")),
+  hubspot: dynamic(() => import("./hubspot/components/EventTypeAppCardInterface")),
+  paypal: dynamic(() => import("./paypal/components/EventTypeAppCardInterface")),
+  office365video: dynamic(() => import("./office365video/components/InstallAppButton")),
 };
 
+export * from "./apps.browser.generated";
 export default appStoreMap;
